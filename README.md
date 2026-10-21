@@ -1,34 +1,80 @@
 # Portfolio — Yash Kumar Singh
 
-Personal portfolio: AI Engineer · Python Backend. Next.js 15 (App Router) + Tailwind CSS 4, fully static.
+Personal portfolio of **Yash Kumar Singh, AI & Backend Engineer** — production GenAI systems, retrieval,
+multi-agent workflows and Python backends.
+
+**Live:** _add your Vercel URL here_ · **GitHub:** [yash6388](https://github.com/yash6388) ·
+**LinkedIn:** [yash-kumarsingh](https://www.linkedin.com/in/yash-kumarsingh/)
+
+## Highlights
+- **Editorial design** — warm paper tones with a single accent colour, serif headlines, monospace labels;
+  light and dark mode follow the visitor's system setting.
+- **Animated system diagram** in the hero — the shape of the AI systems I build (guard → route → retrieve or
+  act, with evals and tracing underneath), drawn in pure SVG.
+- **Fully static and fast** — no client-side data fetching; scroll reveals respect reduced-motion settings.
+- **Responsive** — tested on desktop and phone widths.
+- **SEO and sharing** — metadata plus a generated favicon and Open Graph image for LinkedIn/X previews.
+
+## Tech stack
+Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · `next/font` (Instrument Serif, Geist) ·
+`next/og` · Lucide icons · deployed on Vercel.
+
+## Project structure
+```
+src/
+├── app/
+│   ├── layout.tsx            fonts, metadata, theme colours
+│   ├── page.tsx              all sections (hero, about, experience, projects, skills, education, contact)
+│   ├── globals.css           design tokens (light/dark), animations
+│   ├── icon.tsx              generated favicon
+│   └── opengraph-image.tsx   generated link-preview image
+├── components/
+│   ├── SystemDiagram.tsx     animated hero figure
+│   ├── Nav.tsx               sticky navigation + mobile menu
+│   ├── Reveal.tsx            scroll reveal
+│   └── icons.tsx             GitHub / LinkedIn marks
+└── data/
+    └── profile.ts            ALL content lives here
+public/
+├── avatar.jpg                profile photo (square)
+├── resume.pdf                résumé linked from the site
+└── projects/                 project screenshots
+```
 
 ## Run locally
 ```bash
 npm install
 npm run dev          # http://localhost:3005
+npm run build        # production build
+npm run lint
 ```
 
 ## Update content
-Everything (bio, experience, projects, skills, education, links) lives in **`src/data/profile.ts`**.
+Everything — bio, experience, projects, skills, education, links — lives in **`src/data/profile.ts`**.
 
 - **New project:** add an entry to `projects`. Optional `image` (put the file in `public/projects/`)
-  and `demo` (live link).
+  and `demo` (live link). Projects appear in the order listed.
+- **Photo:** replace `public/avatar.jpg` with a **square** image (≈ 640×640, face centred). It is shown in a
+  small circle, so crop close to the face.
+- **Résumé:** replace `public/resume.pdf`.
 
-### Photo and resume — two ways to update them after deploying
-**A. Replace the file on GitHub (no code):** in the repo on github.com open `public/` →
-*Add file → Upload files* → upload `avatar.jpg` or `resume.pdf` with the same name → *Commit*.
-Vercel redeploys automatically; the live site updates in about a minute.
+If no photo exists, initials are shown; if no résumé exists, the Résumé buttons are hidden.
 
-**B. Use links that update themselves** — set them once in `src/data/profile.ts`:
-- `avatar: "https://avatars.githubusercontent.com/u/104134149?v=4"` → the site always shows your current
-  GitHub profile photo.
-- `resume: "<Google Drive share link>"` → in Drive use *Manage versions → Upload new version* to replace the
-  PDF; the link stays the same, so the site always serves the latest resume (no redeploy needed).
+### Updating after deployment
+Every push to `main` redeploys automatically on Vercel (about a minute). Without a terminal: on github.com
+open `public/` → *Add file → Upload files* → upload the new `avatar.jpg` / `resume.pdf` with the same name →
+*Commit changes*.
 
-If no photo is available, your initials are shown; if no resume is set, the Résumé buttons are hidden.
+Alternatively, `avatar` and `resume` in `profile.ts` also accept full URLs:
+- `avatar: "https://avatars.githubusercontent.com/u/104134149?v=4"` — follows the GitHub profile photo.
+- `resume: "<Google Drive share link>"` — replace the file in Drive via *Manage versions → Upload new
+  version*; the link stays the same, so no redeploy is needed.
 
 ## Deploy on Vercel
-1. Push this folder to its own GitHub repo.
-2. On vercel.com → **Add New… → Project** → import the repo → **Deploy** (framework is detected automatically).
-3. After the first deploy, set the environment variable `NEXT_PUBLIC_SITE_URL` to the site URL
-   (e.g. `https://yash-kumar-singh.vercel.app`) and redeploy — it makes link previews on LinkedIn/X use the right address.
+1. Push this folder to its own GitHub repo (public or private — both work with Vercel).
+2. On vercel.com → **Add New… → Project** → import the repo → **Deploy** (Next.js is detected automatically).
+3. Set the environment variable `NEXT_PUBLIC_SITE_URL` to the live URL (e.g. `https://<name>.vercel.app`) and
+   redeploy, so link previews on LinkedIn/X use the right address.
+
+## Content
+The text, photo and résumé are © Yash Kumar Singh — please don't reuse them.

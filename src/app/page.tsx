@@ -436,7 +436,7 @@ function Footer() {
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <p>Designed &amp; built by me · Next.js on Vercel</p>
+        <p>Designed &amp; built by {profile.name.split(" ")[0]}</p>
       </div>
     </footer>
   );

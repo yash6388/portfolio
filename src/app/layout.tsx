@@ -14,11 +14,18 @@ const serif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
+// Absolute URL for link previews: explicit setting → Vercel's production domain → local dev.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3005");
+
 const title = `${profile.name} — ${profile.role}`;
 const description = profile.tagline;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3005"),
+  metadataBase: new URL(siteUrl),
   title,
   description,
   keywords: [
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
     profile.name,
   ],
   authors: [{ name: profile.name, url: profile.links.github }],
-  openGraph: { title, description, type: "website" },
+  openGraph: { title, description, type: "website", url: siteUrl },
   twitter: { card: "summary_large_image", title, description },
 };
 

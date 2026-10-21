@@ -3,7 +3,7 @@
 Personal portfolio of **Yash Kumar Singh, AI & Backend Engineer** — production GenAI systems, retrieval,
 multi-agent workflows and Python backends.
 
-**Live:** _add your Vercel URL here_ · **GitHub:** [yash6388](https://github.com/yash6388) ·
+**Live:** [yash-kumar-singh.vercel.app](https://yash-kumar-singh.vercel.app) · **GitHub:** [yash6388](https://github.com/yash6388) ·
 **LinkedIn:** [yash-kumarsingh](https://www.linkedin.com/in/yash-kumarsingh/)
 
 ## Highlights
@@ -73,8 +73,8 @@ Alternatively, `avatar` and `resume` in `profile.ts` also accept full URLs:
 ## Deploy on Vercel
 1. Push this folder to its own GitHub repo (public or private — both work with Vercel).
 2. On vercel.com → **Add New… → Project** → import the repo → **Deploy** (Next.js is detected automatically).
-3. Set the environment variable `NEXT_PUBLIC_SITE_URL` to the live URL (e.g. `https://<name>.vercel.app`) and
-   redeploy, so link previews on LinkedIn/X use the right address.
+3. Link previews (LinkedIn/X) use Vercel's production domain automatically. If you add a custom domain, set
+   `NEXT_PUBLIC_SITE_URL` (e.g. `https://yourdomain.dev`) in Vercel → Settings → Environment Variables and redeploy.
 
 ## Content
 The text, photo and résumé are © Yash Kumar Singh — please don't reuse them.

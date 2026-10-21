@@ -4,15 +4,19 @@ export const profile = {
   name: "Yash Kumar Singh",
   role: "AI & Backend Engineer",
   location: "Pune, India",
-  // Put your photo at public/avatar.jpg (square, ≥ 400×400). Until then initials are shown.
+  // Photo: a file in /public (e.g. "/avatar.jpg", square ≥ 400×400) OR a URL.
+  // Using your GitHub photo keeps it in sync automatically:
+  //   "https://avatars.githubusercontent.com/u/104134149?v=4"
+  // If neither exists, your initials are shown.
   avatar: "/avatar.jpg",
-  // Put your resume PDF at public/resume.pdf to enable the download button.
+  // Resume: a file in /public (e.g. "/resume.pdf") OR a URL, e.g. a Google Drive share link —
+  // replace the Drive file via "Manage versions" and the site always serves the latest one.
   resume: "/resume.pdf",
   tagline:
-    "I build production GenAI systems — LLM microservices, RAG and multi-agent workflows — on solid, well-tested Python backends.",
+    "LLM microservices, retrieval and multi-agent workflows — designed, evaluated and shipped on solid, well-tested Python backends.",
   about: [
-    "I'm an AI engineer who has been shipping LLM-powered software for international clients since 2025. Most of my work sits where AI meets backend engineering: turning messy business data into reliable, structured LLM output, designing retrieval that actually finds the right passage, and wrapping it all in APIs that are secure, observable and fast.",
-    "I care about AI that works in production, not just in demos — which means evaluation sets, guardrails, failover between model providers, tracing, and tests. In my own time I build agent systems end to end, like VoxDesk, a multi-agent voice AI platform.",
+    "I'm an AI and backend engineer. I build LLM-powered software that real businesses depend on — turning messy operational data into reliable, structured output, designing retrieval that finds the right answer, and wrapping it all in APIs that are secure, observable and fast.",
+    "I care about AI that works in production, not just in demos: evaluation sets, guardrails, failover between model providers, tracing and tests. Outside work I build agent systems end to end — like VoxDesk, a multi-agent voice AI platform — and I'm currently going deeper into model training and fine-tuning.",
   ],
   openTo: "Open to AI & Backend roles",
   links: {
@@ -20,12 +24,6 @@ export const profile = {
     github: "https://github.com/yash6388",
     linkedin: "https://www.linkedin.com/in/yash-kumarsingh/",
   },
-  stats: [
-    { value: "2025", label: "building production GenAI since" },
-    { value: "8", label: "LLM report pipelines built" },
-    { value: "4", label: "LLM providers integrated" },
-    { value: "86%", label: "top-1 retrieval accuracy (VoxDesk eval)" },
-  ],
 };
 
 export type Experience = {
@@ -40,7 +38,7 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     title: "Software Engineer — GenAI & Backend",
-    org: "Hospitality & insurance platforms (US and German clients)",
+    org: "IQ Innovation Hub LLP",
     period: "May 2025 — Present",
     location: "Pune, India",
     points: [

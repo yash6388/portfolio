@@ -17,24 +17,22 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          background: "radial-gradient(circle at 20% 0%, #312e81 0%, #07070b 55%)",
-          color: "#ededf1",
+          background: "#f6f4ef",
+          color: "#17160f",
         }}
       >
-        <div style={{ fontSize: 30, color: "#a5b4fc", letterSpacing: 4 }}>PORTFOLIO</div>
+        <div style={{ fontSize: 26, color: "#d9481f", letterSpacing: 4 }}>PORTFOLIO</div>
         <div style={{ fontSize: 76, fontWeight: 700, marginTop: 18 }}>{profile.name}</div>
         <div
           style={{
             fontSize: 44,
             marginTop: 10,
-            background: "linear-gradient(90deg, #a5b4fc, #c4b5fd, #67e8f9)",
-            backgroundClip: "text",
-            color: "transparent",
+            color: "#d9481f",
           }}
         >
           {profile.role}
         </div>
-        <div style={{ fontSize: 28, marginTop: 34, color: "#9b9bab", maxWidth: 950 }}>
+        <div style={{ fontSize: 28, marginTop: 34, color: "#6c6959", maxWidth: 950 }}>
           GenAI · RAG · Multi-agent systems · LangGraph · MCP · FastAPI
         </div>
       </div>

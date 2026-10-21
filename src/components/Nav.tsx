@@ -24,23 +24,20 @@ export function Nav({ name, role }: { name: string; role: string }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? "border-b border-border bg-background/80 backdrop-blur-xl" : "border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled || open ? "border-line bg-background/90 backdrop-blur-md" : "border-transparent"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="flex items-baseline gap-2" aria-label="Back to top">
-          <span className="text-sm font-semibold tracking-tight sm:text-base">{name}</span>
-          <span className="hidden text-xs text-muted sm:inline">· {role}</span>
+        <a href="#top" className="flex items-baseline gap-2.5" aria-label="Back to top">
+          <span className="font-serif text-xl leading-none">{name}</span>
+          <span className="hidden font-mono text-[11px] text-muted sm:inline">/ {role}</span>
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-7 md:flex">
           {LINKS.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="rounded-lg px-3 py-2 text-sm text-muted transition hover:bg-surface-strong hover:text-foreground"
-              >
+              <a href={l.href} className="link-underline font-mono text-xs text-muted transition hover:text-foreground">
                 {l.label}
               </a>
             </li>
@@ -49,7 +46,7 @@ export function Nav({ name, role }: { name: string; role: string }) {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="rounded-lg p-2 text-muted transition hover:text-foreground md:hidden"
+          className="-mr-2 p-2 text-muted transition hover:text-foreground md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
@@ -58,14 +55,15 @@ export function Nav({ name, role }: { name: string; role: string }) {
       </nav>
 
       {open && (
-        <ul className="border-t border-border px-5 pb-4 pt-2 md:hidden">
-          {LINKS.map((l) => (
-            <li key={l.href}>
+        <ul className="border-t border-line px-5 pb-4 pt-1 md:hidden">
+          {LINKS.map((l, i) => (
+            <li key={l.href} className="border-b border-line last:border-0">
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-3 text-base text-muted transition hover:bg-surface-strong hover:text-foreground"
+                className="flex items-baseline gap-3 py-3.5 text-base"
               >
+                <span className="font-mono text-[11px] text-muted">0{i + 1}</span>
                 {l.label}
               </a>
             </li>

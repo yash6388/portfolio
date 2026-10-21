@@ -2,7 +2,7 @@
 
 export const profile = {
   name: "Yash Kumar Singh",
-  role: "AI Engineer · Python Backend",
+  role: "AI & Backend Engineer",
   location: "Pune, India",
   // Put your photo at public/avatar.jpg (square, ≥ 400×400). Until then initials are shown.
   avatar: "/avatar.jpg",
@@ -11,7 +11,7 @@ export const profile = {
   tagline:
     "I build production GenAI systems — LLM microservices, RAG and multi-agent workflows — on solid, well-tested Python backends.",
   about: [
-    "I'm an AI engineer with 1.6 years of experience shipping LLM-powered software for international clients. Most of my work sits where AI meets backend engineering: turning messy business data into reliable, structured LLM output, designing retrieval that actually finds the right passage, and wrapping it all in APIs that are secure, observable and fast.",
+    "I'm an AI engineer who has been shipping LLM-powered software for international clients since 2025. Most of my work sits where AI meets backend engineering: turning messy business data into reliable, structured LLM output, designing retrieval that actually finds the right passage, and wrapping it all in APIs that are secure, observable and fast.",
     "I care about AI that works in production, not just in demos — which means evaluation sets, guardrails, failover between model providers, tracing, and tests. In my own time I build agent systems end to end, like VoxDesk, a multi-agent voice AI platform.",
   ],
   openTo: "Open to AI & Backend roles",
@@ -21,10 +21,10 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/yash-kumarsingh/",
   },
   stats: [
-    { value: "1.6+", label: "years building GenAI" },
+    { value: "2025", label: "building production GenAI since" },
     { value: "8", label: "LLM report pipelines built" },
     { value: "4", label: "LLM providers integrated" },
-    { value: "86%", label: "Hit@1 on my RAG eval" },
+    { value: "86%", label: "top-1 retrieval accuracy (VoxDesk eval)" },
   ],
 };
 

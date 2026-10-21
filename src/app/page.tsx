@@ -26,7 +26,7 @@ const initials = profile.name
 export default function Home() {
   return (
     <>
-      <Nav initials={initials} />
+      <Nav name={profile.name} role={profile.role} />
       <Reveal />
       <main id="top">
         <Hero />
@@ -74,11 +74,11 @@ function Hero() {
             style={{ animationDelay: "80ms" }}
           >
             Hi, I&apos;m {profile.name.split(" ")[0]}.
-            {/* Keep each part of the role on one line ("AI Engineer · " / "Python Backend"). */}
+            {/* If the role has parts separated by " · ", keep each part on one line. */}
             <span className="mt-2 block text-[0.8em] leading-tight text-gradient">
               {profile.role.split(" · ").map((part, i, all) => (
                 <span key={part}>
-                  <span className="whitespace-nowrap">
+                  <span className={all.length > 1 ? "whitespace-nowrap" : undefined}>
                     {part}
                     {i < all.length - 1 && " ·"}
                   </span>{" "}
@@ -302,6 +302,17 @@ function ProjectsSection() {
           {rest.map((p) => (
             <ProjectCard key={p.name} project={p} wide={rest.length === 1} />
           ))}
+        </div>
+        <div className="flex justify-center pt-4" data-reveal>
+          <a
+            href={`${profile.links.github}?tab=repositories`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex h-11 items-center gap-2 rounded-xl border border-border bg-surface px-5 text-sm font-medium transition hover:border-indigo-400/40 hover:bg-surface-strong"
+          >
+            <GitHubIcon className="size-4" /> See more projects on GitHub
+            <ArrowUpRight className="size-4 text-muted transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+          </a>
         </div>
       </div>
     </Section>

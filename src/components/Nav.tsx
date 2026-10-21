@@ -11,7 +11,7 @@ const LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
-export function Nav({ initials }: { initials: string }) {
+export function Nav({ name, role }: { name: string; role: string }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,9 +29,9 @@ export function Nav({ initials }: { initials: string }) {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="font-mono text-sm font-semibold tracking-tight" aria-label="Back to top">
-          <span className="text-gradient">{initials}</span>
-          <span className="text-muted">.dev</span>
+        <a href="#top" className="flex items-baseline gap-2" aria-label="Back to top">
+          <span className="text-sm font-semibold tracking-tight sm:text-base">{name}</span>
+          <span className="hidden text-xs text-muted sm:inline">· {role}</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

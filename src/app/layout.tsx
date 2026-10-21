@@ -8,7 +8,7 @@ import "./globals.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const title = `${profile.name} — AI Engineer · Python Backend`;
+const title = `${profile.name} — ${profile.role}`;
 const description = profile.tagline;
 
 export const metadata: Metadata = {
